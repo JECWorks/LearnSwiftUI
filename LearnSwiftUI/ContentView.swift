@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    let names = ["John", "Paul", "George", "Ringo"]
+    let cities = ["Denver", "Houston", "Seattle"]
     
     var body: some View {
-        List(names, id: \.self) { name in
-            Text(name)
+        List(cities, id: \.self) { city in
+            VStack {
+                Image(city.lowercased())
+                    .resizable()
+                    .frame(width: 100, height: 90)
+                    .padding()
+//                    .aspectRatio(contentMode: .fit)
+                Text(city)
+            }
         }
     }
 }
